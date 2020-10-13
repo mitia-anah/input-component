@@ -28285,7 +28285,11 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"Input.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"assets/phone.svg":[function(require,module,exports) {
+module.exports = "/phone.4489bc8a.svg";
+},{}],"assets/padlock.svg":[function(require,module,exports) {
+module.exports = "/padlock.39fbd10d.svg";
+},{}],"Icon.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28295,18 +28299,64 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _phone = _interopRequireDefault(require("./assets/phone.svg"));
+
+var _padlock = _interopRequireDefault(require("./assets/padlock.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Icon = function Icon(props) {
+  var icon;
+  var style = props.align === 'right' ? 'icon--right' : null;
+
+  switch (props.name) {
+    case 'phone':
+      icon = /*#__PURE__*/_react.default.createElement("img", {
+        src: _phone.default,
+        className: style
+      });
+      break;
+
+    case 'padlock':
+      icon = /*#__PURE__*/_react.default.createElement("img", {
+        src: _padlock.default,
+        className: style
+      });
+      break;
+  }
+
+  return icon;
+};
+
+var _default = Icon;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./assets/phone.svg":"assets/phone.svg","./assets/padlock.svg":"assets/padlock.svg"}],"Input.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Icon = _interopRequireDefault(require("./Icon"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Input(props) {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, props.paragraph), /*#__PURE__*/_react.default.createElement("label", null, "Label"), /*#__PURE__*/_react.default.createElement("input", {
-    type: "",
-    placeholder: ""
+  var label = props.label || props.children;
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: props.placeholder // ${props.startIcon ? <Icon name={props.startIcon} /> : ''}
+    // ${props.endIcon ? <Icon name={props.endIcon} align="right" /> : ''}
+
   }));
 }
 
 var _default = Input;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Icon":"Icon.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -28439,13 +28489,55 @@ var App = /*#__PURE__*/function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Input.default, {
-        paragraph: "<Input />",
+      return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("h1", null, "Input"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, "<Input />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
         placeholder: "placeholder"
-      }), /*#__PURE__*/_react.default.createElement(_Input.default, {
-        paragraph: "<Input error />",
+      }), "<Input error />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
         placeholder: "placeholder"
-      }))));
+      }), "<Input disabled />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        placeholder: "placeholder"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "wrapper"
+      }, "<Input helperText=\"Some interesting text\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        placeholder: "placeholder"
+      }), "<Input helperText=\"Some interesting text\" error />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        placeholder: "placeholder"
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "wrapper"
+      }, "<Input startIcon />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        startIcon: "phone",
+        placeholder: "placeholder"
+      }), "<Input endIcon />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        endIcon: "padlock",
+        placeholder: "placeholder"
+      })), "<Input value=\"text\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        value: "Text"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "wrapper"
+      }, "<Input size=\"sm\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        size: "sm",
+        placeholder: "placeholder"
+      }), "<Input size=\"md\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        size: "md",
+        placeholder: "placeholder"
+      }), "<Input size=\"fullWidth\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        size: "fullWidth",
+        value: "Text"
+      })), /*#__PURE__*/_react.default.createElement("div", null, "<Input multiline row=\"4\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
+        label: "Label",
+        row: "4",
+        placeholder: "placeholder"
+      })))));
     }
   }]);
 
@@ -28494,7 +28586,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55805" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61882" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
