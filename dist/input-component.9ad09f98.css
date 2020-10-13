@@ -1,0 +1,21 @@
+body {
+    padding: 2rem;
+}
+
+div {
+    padding-block-end: 1rem;
+}
+
+div > label {
+    display: flex;
+}
+
+input {
+    padding: 1rem;
+    /* border: 1px solid #2962FF; */
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+
+/*# sourceMappingURL=/input-component.9ad09f98.css.map */
