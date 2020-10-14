@@ -1,0 +1,36 @@
+body {
+    padding: 2rem;
+}
+div {
+    padding-block-end: 1rem;
+}
+
+div > label {
+    display: flex;
+}
+
+input {
+    padding: 1rem;
+    /* border: 1px solid #2962FF; */;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+input.error-input:hover,
+input.default:hover {
+    border-color: #333333;
+}
+input.default:focus {
+    border-color: #2962FF;
+}
+input.error-input:focus,
+input.error-input {
+    border-color: #D32F2F;  
+}
+input.disabled-input {
+    background-color: #F2F2F2;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */

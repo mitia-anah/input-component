@@ -28330,33 +28330,7 @@ var Icon = function Icon(props) {
 
 var _default = Icon;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./assets/phone.svg":"assets/phone.svg","./assets/padlock.svg":"assets/padlock.svg"}],"Input.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Icon = _interopRequireDefault(require("./Icon"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Input(props) {
-  var label = props.label || props.children;
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: props.placeholder // ${props.startIcon ? <Icon name={props.startIcon} /> : ''}
-    // ${props.endIcon ? <Icon name={props.endIcon} align="right" /> : ''}
-
-  }));
-}
-
-var _default = Input;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./Icon":"Icon.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./assets/phone.svg":"assets/phone.svg","./assets/padlock.svg":"assets/padlock.svg"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -28429,7 +28403,40 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"App.js":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"Input.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Icon = _interopRequireDefault(require("./Icon"));
+
+var _style = _interopRequireDefault(require("style.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Input(props) {
+  var label = props.label;
+  var defaultInput = props.default ? "default" : "";
+  var helperText = props.paragraph;
+  var errorInput = props.error ? "error-input" : "input";
+  var disabledInput = props.disabled ? "disabled-input" : "";
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: props.placeholder,
+    className: "\n                ".concat(defaultInput, "\n                ").concat(errorInput, "\n                ").concat(disabledInput, "\n                ") // ${props.startIcon ? <Icon name={props.startIcon} /> : ''}
+    // ${props.endIcon ? <Icon name={props.endIcon} align="right" /> : ''}
+
+  }), /*#__PURE__*/_react.default.createElement("p", null, helperText));
+}
+
+var _default = Input;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Icon":"Icon.js","style.css":"node_modules/style.css/style.css"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28482,29 +28489,46 @@ var App = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, App);
 
     _this = _super.call(this);
-    _this.state = {};
+    _this.state = {
+      disabled: true
+    };
     return _this;
   }
 
   _createClass(App, [{
+    key: "handleClick",
+    value: function handleClick() {
+      this.setState({
+        disabled: this.state.disabled
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("h1", null, "Input"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, "<Input />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
+        default: true,
         placeholder: "placeholder"
       }), "<Input error />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
+        error: true,
         placeholder: "placeholder"
       }), "<Input disabled />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
+        disabled: this.state.disabled,
         placeholder: "placeholder"
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "wrapper"
       }, "<Input helperText=\"Some interesting text\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
+        helperText: "Some interesting text",
+        paragraph: "Some interesting text",
         placeholder: "placeholder"
       }), "<Input helperText=\"Some interesting text\" error />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
+        helperText: "Some interesting text",
+        error: true,
+        paragraph: "Some interesting text",
         placeholder: "placeholder"
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "wrapper"
@@ -28586,7 +28610,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61882" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56855" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

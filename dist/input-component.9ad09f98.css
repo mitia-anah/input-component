@@ -2,7 +2,7 @@ body {
     padding: 2rem;
 }
 input {
-    border-style: none;
+    border: none;
 }
 div {
     padding-block-end: 1rem;
@@ -23,5 +23,8 @@ input:hover {
     border: 1px solid #333333;
 }
 
+.error-input {
+    border-color: 1px solid #D32F2F;
+}
 
 /*# sourceMappingURL=/input-component.9ad09f98.css.map */
