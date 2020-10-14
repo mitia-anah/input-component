@@ -6,8 +6,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      disabled: true,
+      value: 'Text'
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState(
+      prevState => {
+        value = this.state.value
+      }
+    )
+
   }
 
   render() {
@@ -70,7 +79,8 @@ class App extends Component {
             {`<Input value="text" />`}
             <Input
               label="Label"
-              value="Text"
+              onChange={this.handleChange}
+              value={this.state.value}
             />
 
             <div className="wrapper">
@@ -90,7 +100,8 @@ class App extends Component {
               <Input
                 label="Label"
                 size="fullWidth"
-                value="Text"
+                onChange={this.handleChange}
+                value={this.state.value}
               />
             </div>
             <div>

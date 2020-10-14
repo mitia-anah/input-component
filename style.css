@@ -50,3 +50,8 @@ input.disabled-input {
     width: 1031px;
 height: 56px;
 }
+
+.multiline {
+    width: 200px;
+    height: 150px;
+}

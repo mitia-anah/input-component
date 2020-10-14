@@ -28420,17 +28420,21 @@ var _style = _interopRequireDefault(require("style.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Input(props) {
+  var value = props.value;
   var label = props.label;
   var defaultInput = props.default ? "default" : "";
   var paragraph = props.paragraph;
   var errorInput = props.error ? "error-input" : "input";
   var disabledInput = props.disabled ? "disabled-input" : "";
   var size = props.size === 'sm' ? "sm" : "md";
-  var fullWidth = props.fullWidth ? "fullWidth" : "";
+  var fullWidth = props.size === 'fullWidth' ? "fullWidth" : "";
+  var multiline = props.row === "4" ? "multiline" : "";
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: props.placeholder,
-    className: "\n                ".concat(defaultInput, "\n                ").concat(errorInput, "\n                ").concat(disabledInput, "\n                ").concat(size, "\n                ")
+    value: props.value,
+    onChange: props.onChange,
+    className: "\n                ".concat(defaultInput, "\n                ").concat(errorInput, "\n                ").concat(disabledInput, "\n                ").concat(size, "\n                ").concat(fullWidth, "\n                ").concat(multiline, "\n                ")
   }), /*#__PURE__*/_react.default.createElement("p", null, paragraph));
 }
 
@@ -28490,12 +28494,22 @@ var App = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this);
     _this.state = {
-      disabled: true
+      value: 'Text'
     };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(App, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      var _this2 = this;
+
+      this.setState(function (prevState) {
+        value = _this2.state.value;
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("h1", null, "Input"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, "<Input />", /*#__PURE__*/_react.default.createElement(_Input.default, {
@@ -28535,7 +28549,8 @@ var App = /*#__PURE__*/function (_Component) {
         placeholder: "placeholder"
       })), "<Input value=\"text\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
-        value: "Text"
+        onChange: this.handleChange,
+        value: this.state.value
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "wrapper"
       }, "<Input size=\"sm\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
@@ -28549,7 +28564,8 @@ var App = /*#__PURE__*/function (_Component) {
       }), "<Input size=\"fullWidth\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
         size: "fullWidth",
-        value: "Text"
+        onChange: this.handleChange,
+        value: this.state.value
       })), /*#__PURE__*/_react.default.createElement("div", null, "<Input multiline row=\"4\" />", /*#__PURE__*/_react.default.createElement(_Input.default, {
         label: "Label",
         row: "4",
@@ -28603,7 +28619,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56855" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59021" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
