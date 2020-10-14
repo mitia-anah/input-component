@@ -5,9 +5,12 @@ import style from 'style.css'
 function Input(props) {
     const label = props.label;
     const defaultInput = props.default ? "default" : "";
-    const helperText = props.paragraph;
+    const paragraph = props.paragraph;
     const errorInput = props.error ? "error-input" : "input";
     const disabledInput = props.disabled ? "disabled-input" : "";
+    const size = props.size === 'sm' ? "sm" : "md";
+    const fullWidth = props.fullWidth ? "fullWidth" : "";
+
     return (
         <div>
             <label>{label}</label>
@@ -18,12 +21,10 @@ function Input(props) {
                 ${defaultInput}
                 ${errorInput}
                 ${disabledInput}
+                ${size}
                 `}
-
-            // ${props.startIcon ? <Icon name={props.startIcon} /> : ''}
-            // ${props.endIcon ? <Icon name={props.endIcon} align="right" /> : ''}
             />
-            <p>{helperText}</p>
+            <p>{paragraph}</p>
         </div>
     )
 }

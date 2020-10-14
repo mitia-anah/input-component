@@ -6,7 +6,7 @@ div {
 }
 
 div > label {
-    display: flex;
+    display: flex; 
 }
 
 input {
@@ -32,5 +32,23 @@ input.disabled-input {
     background-color: #F2F2F2;
 }
 
+.helperText {
+    color:#D32F2F;
+}
+
+.sm {
+    width: 200px;
+    height: 40px;
+}
+
+.md {
+  width: 200px;
+  height: 56px;
+}
+
+.fullWidth {
+    width: 1031px;
+height: 56px;
+}
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

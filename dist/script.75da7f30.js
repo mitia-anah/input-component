@@ -28422,16 +28422,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Input(props) {
   var label = props.label;
   var defaultInput = props.default ? "default" : "";
-  var helperText = props.paragraph;
+  var paragraph = props.paragraph;
   var errorInput = props.error ? "error-input" : "input";
   var disabledInput = props.disabled ? "disabled-input" : "";
+  var size = props.size === 'sm' ? "sm" : "md";
+  var fullWidth = props.fullWidth ? "fullWidth" : "";
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: props.placeholder,
-    className: "\n                ".concat(defaultInput, "\n                ").concat(errorInput, "\n                ").concat(disabledInput, "\n                ") // ${props.startIcon ? <Icon name={props.startIcon} /> : ''}
-    // ${props.endIcon ? <Icon name={props.endIcon} align="right" /> : ''}
-
-  }), /*#__PURE__*/_react.default.createElement("p", null, helperText));
+    className: "\n                ".concat(defaultInput, "\n                ").concat(errorInput, "\n                ").concat(disabledInput, "\n                ").concat(size, "\n                ")
+  }), /*#__PURE__*/_react.default.createElement("p", null, paragraph));
 }
 
 var _default = Input;
@@ -28496,13 +28496,6 @@ var App = /*#__PURE__*/function (_Component) {
   }
 
   _createClass(App, [{
-    key: "handleClick",
-    value: function handleClick() {
-      this.setState({
-        disabled: this.state.disabled
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("h1", null, "Input"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, "<Input />", /*#__PURE__*/_react.default.createElement(_Input.default, {

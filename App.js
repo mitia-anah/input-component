@@ -9,9 +9,6 @@ class App extends Component {
       disabled: true,
     }
   }
-  handleClick() {
-    this.setState({ disabled: this.state.disabled })
-  }
 
   render() {
     return (
