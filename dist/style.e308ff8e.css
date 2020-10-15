@@ -4,7 +4,10 @@ body {
 div {
     padding-block-end: 1rem;
 }
-
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 div > label {
     display: flex; 
 }
@@ -28,12 +31,29 @@ input.error-input:focus,
 input.error-input {
     border-color: #D32F2F;  
 }
-input.disabled-input {
+.disabled{
     background-color: #F2F2F2;
 }
 
 .helperText {
     color:#D32F2F;
+}
+input::placeholder {
+    padding-inline-start: 1.5rem;
+}
+.startIcon {
+    background-image: url("/phone.4489bc8a.svg");
+    background-position: 10px;
+    background-repeat: no-repeat;
+    width: 20px;
+    display: block;
+}
+.endIcon {
+    background-image: url("/padlock.39fbd10d.svg");
+    background-position: 10rem;
+    background-repeat: no-repeat;
+    width: 20px;
+    display: block;
 }
 
 .sm {

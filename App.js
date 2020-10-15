@@ -6,6 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      disabled: true,
       value: 'Text'
     }
     this.handleChange = this.handleChange.bind(this);
@@ -45,35 +46,44 @@ class App extends Component {
             />
 
             <div className="wrapper">
-              {`<Input helperText="Some interesting text" />`}
-              <Input
-                label="Label"
-                helperText="Some interesting text"
-                paragraph="Some interesting text"
-                placeholder="placeholder"
-              />
-              {`<Input helperText="Some interesting text" error />`}
-              <Input
-                label="Label"
-                helperText="Some interesting text" error
-                paragraph="Some interesting text"
-                placeholder="placeholder"
-              />
+              <div className="container">
+                {`<Input helperText="Some interesting text" />`}
+                <Input
+                  label="Label"
+                  helperText="Some interesting text"
+                  paragraph="Some interesting text"
+                  placeholder="placeholder"
+                />
+              </div>
+              <div className="container">
+                {`<Input helperText="Some interesting text" error />`}
+                <Input
+                  label="Label"
+                  helperText="Some interesting text" error
+                  paragraph="Some interesting text"
+                  placeholder="placeholder"
+                />
+              </div>
             </div>
 
             <div className="wrapper">
-              {`<Input startIcon />`}
-              <Input
-                label="Label"
-                startIcon="phone"
-                placeholder="placeholder"
-              />
-              {`<Input endIcon />`}
-              <Input
-                label="Label"
-                endIcon="padlock"
-                placeholder="placeholder"
-              />
+              <div className="container">
+                {`<Input startIcon />`}
+                <Input
+                  label="Label"
+                  startIcon="phone"
+                  placeholder="placeholder"
+                />
+              </div>
+
+              <div className="container">
+                {`<Input endIcon />`}
+                <Input
+                  label="Label"
+                  endIcon="padlock"
+                  placeholder="placeholder"
+                />
+              </div>
             </div>
 
             {`<Input value="text" />`}
@@ -84,18 +94,24 @@ class App extends Component {
             />
 
             <div className="wrapper">
-              {`<Input size="sm" />`}
-              <Input
-                label="Label"
-                size="sm"
-                placeholder="placeholder"
-              />
-              {`<Input size="md" />`}
-              <Input
-                label="Label"
-                size="md"
-                placeholder="placeholder"
-              />
+              <div className="container">
+                {`<Input size="sm" />`}
+                <Input
+                  label="Label"
+                  size="sm"
+                  placeholder="placeholder"
+                />
+              </div>
+              <div className="container">
+                {`<Input size="md" />`}
+                <Input
+                  label="Label"
+                  size="md"
+                  placeholder="placeholder"
+                />
+              </div>
+            </div>
+            <div>
               {`<Input size="fullWidth" />`}
               <Input
                 label="Label"
@@ -114,7 +130,7 @@ class App extends Component {
             </div>
           </div>
         </form>
-      </main>
+      </main >
     )
   }
 }
