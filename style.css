@@ -12,6 +12,11 @@ div > label {
     display: flex; 
 }
 
+#root {
+    margin: 0 auto;
+    background: #fff3ec;
+}
+
 input {
     padding: 1rem;
     /* border: 1px solid #2962FF; */;
@@ -67,8 +72,9 @@ input::placeholder {
 }
 
 .fullWidth {
-    width: 1031px;
-height: 56px;
+    /* position: absolute;   */
+    width: 700px;
+    height: 56px;
 }
 
 .multiline {
